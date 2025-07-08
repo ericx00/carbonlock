@@ -1,0 +1,13 @@
+type FuturesContract = record {
+  id: nat64;
+  buyer: text;
+  seller: text;
+  amount_tonnes: nat32;
+  price_usd: float64;
+  delivery_year: nat16;
+};
+
+service : {
+  list_contracts: () -> (vec FuturesContract) query;
+  create_contract: (text, text, nat32, float64, nat16) -> (nat64);
+}

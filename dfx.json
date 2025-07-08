@@ -1,0 +1,22 @@
+{
+  "canisters": {
+    "carbonlock_backend": {
+      "type": "rust",
+      "main": "src/carbonlock_backend/src/lib.rs",
+      "candid": "src/carbonlock_backend/src/carbonlock_backend.did",
+      "package": "carbonlock_backend"
+    },
+    "carbonlock_frontend": {
+      "type": "assets",
+      "source": [
+        "src/carbonlock_frontend"
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "version": 1
+}

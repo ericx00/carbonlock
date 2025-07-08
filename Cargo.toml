@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/carbonlock_backend"
+]
+resolver = "2"
