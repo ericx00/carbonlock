@@ -1,3 +1,60 @@
+type ContractStatus = variant {
+  Created;
+  Purchased;
+  Expired;
+  Settled;
+};
+
+type Contract = record {
+  id: nat64;
+  buyer: opt principal;
+  seller: principal;
+  amount_tonnes: nat32;
+  price_usd: float64;
+  delivery_year: nat16;
+  status: ContractStatus;
+  created_at: nat64;
+  updated_at: nat64;
+};
+
+type CarbonCredit = record {
+  id: nat64;
+  owner: principal;
+  risk_score: opt nat8;
+  risk_score_history: vec nat8;
+};
+
+type EventType = variant {
+  Created;
+  Purchased;
+  Expired;
+  Settled;
+  RiskScoreUpdated;
+};
+
+type ContractEvent = record {
+  event_type: EventType;
+  contract_id: nat64;
+  timestamp: nat64;
+  details: opt text;
+};
+
 service : {
-    "greet": (text) -> (text) query;
+  // Contract operations
+  "create_contract": (principal, principal, nat32, float64, nat16) -> (nat64);
+  "list_contracts": () -> (vec Contract) query;
+  "get_contract": (nat64) -> (opt Contract) query;
+  "buy_contract": (nat64) -> (bool);
+  "expire_contract": (nat64) -> (bool);
+  
+  // Credit operations
+  "create_credit": () -> (nat64);
+  "list_credits": () -> (vec CarbonCredit) query;
+  "update_risk_score": (nat64, nat8) -> (opt text);
+  
+  // Event operations
+  "list_events": () -> (vec ContractEvent) query;
+  
+  // Greet function
+  "greet": (text) -> (text) query;
 }

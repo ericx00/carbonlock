@@ -22,4 +22,7 @@ dist/
 .svelte-kit/
 
 # environment variables
+.env.development
 .env
+.env.*
+!.env.example

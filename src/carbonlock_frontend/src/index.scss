@@ -1,24 +1,156 @@
+// Green color palette
+$green-main: #2ecc40;
+$green-dark: #218c29;
+$green-light: #e7f9ed;
+$white: #fff;
+$gray-bg: #f8f9fa;
+$shadow: 0 2px 12px rgba(44, 204, 64, 0.08);
+
 body {
-  font-family: sans-serif;
-  font-size: 1.5rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 1.1rem;
+  background: $gray-bg;
+  color: #222;
 }
 
 img {
-  max-width: 50vw;
-  max-height: 25vw;
+  max-width: 180px;
+  max-height: 80px;
   display: block;
-  margin: auto;
+  margin: 1.5rem auto 1rem auto;
 }
 
+// Card style for forms and panels
+.card-green {
+  background: $white;
+  border-radius: 1rem;
+  box-shadow: $shadow;
+  border: 1px solid $green-light;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+}
+
+// Table styling
+.table-green {
+  background: $white;
+  border-radius: 0.75rem;
+  box-shadow: $shadow;
+  overflow: hidden;
+}
+.table-green thead {
+  background: $green-main;
+  color: $white;
+}
+.table-green tbody tr {
+  transition: background 0.2s;
+}
+.table-green tbody tr:hover {
+  background: $green-light;
+}
+
+// Call-to-action button
+.btn-green {
+  background: $green-main;
+  color: $white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(44, 204, 64, 0.12);
+  transition: background 0.2s;
+}
+.btn-green:hover, .btn-green:focus {
+  background: $green-dark;
+  color: $white;
+}
+
+// Section backgrounds
+.section-bg {
+  background: $white;
+  border-radius: 1rem;
+  box-shadow: $shadow;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+}
+
+// Navbar branding
+.navbar {
+  background: $green-main !important;
+  box-shadow: $shadow;
+}
+.navbar .navbar-brand, .navbar-nav .nav-link {
+  color: $white !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.navbar .nav-link.active, .navbar .nav-link:hover {
+  color: $green-dark !important;
+  background: $green-light !important;
+  border-radius: 0.5rem;
+}
+
+// Headings
+h1, h2, h3, h4, h5 {
+  color: $green-main;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+// Alerts and info
+.alert-info {
+  background: $green-light;
+  color: $green-dark;
+  border: 1px solid $green-main;
+  border-radius: 0.5rem;
+}
+
+// General spacing
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+// Forms
 form {
   display: flex;
   justify-content: center;
   gap: 0.5em;
   flex-flow: row wrap;
-  max-width: 40vw;
-  margin: auto;
+  max-width: 600px;
+  margin: 1.5rem auto;
   align-items: baseline;
+  background: $white;
+  border-radius: 0.75rem;
+  box-shadow: $shadow;
+  padding: 1.5rem 2rem;
 }
+
+input, select, textarea {
+  border-radius: 0.4rem !important;
+  border: 1px solid $green-light !important;
+  box-shadow: none !important;
+  font-size: 1rem;
+}
+
+// Utility
+.rounded {
+  border-radius: 0.75rem !important;
+}
+.shadow {
+  box-shadow: $shadow !important;
+}
+
+// Animations
+.highlight {
+  animation: highlight-fade 2s;
+  background: #d1e7dd !important;
+}
+@keyframes highlight-fade {
+  from { background: #b6f5c6; }
+  to { background: #fff; }
+}
+
+
 
 button[type="submit"] {
   padding: 5px 20px;

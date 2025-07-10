@@ -2,20 +2,28 @@
   "canisters": {
     "carbonlock_backend": {
       "type": "rust",
+      "package": "carbonlock_backend",
       "main": "src/carbonlock_backend/src/lib.rs",
-      "candid": "src/carbonlock_backend/src/carbonlock_backend.did",
-      "package": "carbonlock_backend"
+      "candid": "src/carbonlock_backend/src/carbonlock_backend.did"
     },
     "carbonlock_frontend": {
-      "type": "assets",
-      "source": [
-        "src/carbonlock_frontend"
-      ]
+      "dependencies": ["carbonlock_backend"],
+      "frontend": {
+        "entrypoint": "src/carbonlock_frontend/index.html"
+      },
+      "source": ["src/carbonlock_frontend"],
+      "type": "assets"
     }
   },
   "defaults": {
     "build": {
       "packtool": ""
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
     }
   },
   "version": 1
