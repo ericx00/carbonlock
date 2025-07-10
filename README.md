@@ -137,6 +137,6 @@ Yes! This project is a solid prototype for a real decentralized app (dapp) on th
 ---
 
 **Summary:**  
-Your project is a working dapp prototype for carbon credit contracts.  
+our project is a working dapp prototype for carbon credit contracts.  
 Fix the UI update by ensuring `loadContracts()` is called after contract creation and check for errors.  
 With some enhancements, you can make this a real, production-ready decentralized application.
