@@ -5,7 +5,7 @@ const team = [
     name: 'Ericx00.', 
     role: 'Founder & Lead Developer', 
     bio: 'Blockchain engineer and climate advocate.', 
-    img: '/ericx00.jpg' 
+    img: '../assets/ericx00.jpg' 
   },
   { 
     name: 'Nessy', 
@@ -17,13 +17,13 @@ const team = [
     name: 'Michael Agoya', 
     role: 'Frontend Lead', 
     bio: 'React/Vite UI architect.', 
-    img: '/Agoya.jpg' 
+    img: '../assets/Agoya.jpg' 
   },
   { 
     name: 'Wiltord', 
     role: 'AI/Oracle Dev', 
     bio: 'AI integration and data science.', 
-    img: '/wiltord.jpg' 
+    img: '../assets/wiltord.jpg' 
   }
 ];
 
